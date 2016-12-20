@@ -4,7 +4,7 @@ Converts selected HTML to Elm
 
 ## Installation
 
-Clone this repo and put into <path_to_sublime>/Packages/ directory.
+Clone this repo and put into "path_to_sublime"/Packages/ directory.
 
 ## Usage
 
