@@ -15,4 +15,4 @@ Select HTML in the buffer and hit cmd+k and then cmd+e (crtl+k, crtl+e on Linux 
 
 ## Credits
 
-Ported from https://github.com/CodeTownOfficial/html-to-elm
+Ported from https://github.com/CodeTownOfficial/html-to-elm (html to elm package for Atom editor)
