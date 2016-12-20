@@ -5,7 +5,7 @@ from html.parser import HTMLParser
 import re
 
 class HtmlToElmParser(HTMLParser):
-  def __init__(self, indent_size = 2):
+  def __init__(self, indent_size = 4):
     super().__init__()
     self.result = ""
 
@@ -26,7 +26,7 @@ class HtmlToElmParser(HTMLParser):
       attr = ("type_", attr[1])
 
     # handle data-<CUSTOM> attrs, TODO: check list of build in elm functions, if not present, use attribute fn to deal with
-    if attr[0].find("data-") >= 0:
+    if (attr[0].find("data-") >= 0) or (attr[0].find("role") >= 0):
       return "attribute \"" + attr[0] + "\" \"" + attr[1] + "\""
 
     return attr[0] + " \"" + attr[1] + "\""
