@@ -22,8 +22,19 @@ class HtmlToElmParser(HTMLParser):
   
   def map_attr(self, attr):
     # handle elm type keyword 
+    style_attrs = []
+
     if attr[0] == "type":
       attr = ("type_", attr[1])
+    elif attr[0] == "style":       
+      xs = attr[1].split(";")
+      for s in xs:
+        sp = s.split(':')
+        if len(sp) == 2:
+          style_attrs.append("style \"%s\" \"%s\"" % (sp[0].strip(), sp[1].strip()))
+
+    if len(style_attrs) > 0:
+      return ", ".join(style_attrs)
 
     # handle data-<CUSTOM> attrs, TODO: check list of build in elm functions, if not present, use attribute fn to deal with
     if (attr[0].find("data-") >= 0) or (attr[0].find("role") >= 0):
