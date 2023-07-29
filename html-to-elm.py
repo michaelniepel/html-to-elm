@@ -26,8 +26,6 @@ class HtmlToElmParser(HTMLParser):
 
     if attr[0] == "type":
       attr = ("type_", attr[1])
-    elif attr[0] == "class":
-      attr = ("class_", attr[1])
     elif attr[0] == "style":       
       xs = attr[1].split(";")
       for s in xs:
